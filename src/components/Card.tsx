@@ -17,7 +17,7 @@ const StyledContestant = styled.div<IStatus>`
   padding: .2em;
 
   border-radius: 3px;
-  border-left: 5px solid red;
+  border-left: 5px solid #FC0D1B;
   span {
     color: #333333;
     padding-left: .5em;
@@ -25,7 +25,7 @@ const StyledContestant = styled.div<IStatus>`
   margin: 1em;
   ${
     props => props.won && "\
-        border-left: 5px solid green;  \
+        border-left: 5px solid #32B565;  \
         span:nth-child(2){ \
           font-weight: bold; \
         }"
