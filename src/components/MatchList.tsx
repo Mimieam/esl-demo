@@ -113,7 +113,27 @@ const rawData = [
   }
 ]
 
-export default class MatchList extends Component {
+
+
+export default class MatchList extends Component <{}, { timerValue: string }>{
+
+
+  constructor(props: any){
+    super(props);
+    this.state = { timerValue: 'Date \u25B2' };
+  }
+
+  handleOnClick(event: any) {
+    if (event.target.value == "Date \u25BC") {
+      console.log("sort Ascending")
+      this.setState({ timerValue: "Date \u25B2" })
+    }
+    else if(event.target.value =="Date \u25B2"){
+      console.log("sort Descending")
+      this.setState({ timerValue: "Date \u25BC" })
+    }
+  }
+
   render() {
 
     const data =[{"name":"Black Lotus", "score":0},{"name":"Team Chandra", "score": 3}];
@@ -122,6 +142,9 @@ export default class MatchList extends Component {
 
     return (
       <StyledList>
+        <div style={{ background: "white", display: "flex", justifyContent: "flex-end", fontSize: "calc(10px + 2vmin)"}}>
+          <input style={{ background: "white", padding:'.8em', fontSize: 'calc(1vmin)', borderRadius: '3px', margin: '2em 2em 0' }} type="button" value={this.state.timerValue} onClick={ e => this.handleOnClick(e) }/>
+        </div>
         {listItems}
       </StyledList>
     );

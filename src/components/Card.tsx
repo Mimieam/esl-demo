@@ -40,6 +40,8 @@ const StyledTimer = styled.div`
 ` 
 const StyledCard = styled.div`
   background-color: #FFFFFF
+  margin-bottom: 2px;
+  padding-bottom: 0.5em;
 `
 
 const Contestant: FunctionComponent<IProps & IStatus> = (props) => {
