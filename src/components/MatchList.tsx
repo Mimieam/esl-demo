@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Card from "./Card";
 
 const StyledList = styled.div`
-  background: #FFFFFF;
+  background: #EBECEE;
   display: flex;
   flex-direction:column
   height: 100vh;
@@ -116,9 +116,9 @@ const rawData = [
 export default class MatchList extends Component {
   render() {
 
-    const data =[{"name":"player1", "score":0},{"name":"player2", "score": 3}];
-    const listItems = data.map((d) => <Card name={d.name} score={d.score}/>);
-
+    const data =[{"name":"Black Lotus", "score":0},{"name":"Team Chandra", "score": 3}];
+    let listItems = data.map(d=> <Card data={data}/>)
+    listItems = [...listItems, ...listItems, ...listItems]
 
     return (
       <StyledList>
